@@ -3,6 +3,7 @@
 ## Unreleased
 
 - The deprecated `gleam/http/service` module has been removed.
+- Added HTTP QUERY method support.
 
 ## v4.4.0 - 2026-09-01
 

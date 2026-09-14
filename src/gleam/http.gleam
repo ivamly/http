@@ -38,6 +38,7 @@ pub type Method {
   /// Proxies that support this should only do so for known trustworthy
   /// clients.
   Connect
+  Query
 
   /// Non-standard but valid HTTP methods.
   Other(String)
@@ -54,6 +55,7 @@ pub fn parse_method(method: String) -> Result(Method, Nil) {
     "POST" -> Ok(Post)
     "PUT" -> Ok(Put)
     "TRACE" -> Ok(Trace)
+    "QUERY" -> Ok(Query)
     method ->
       case is_valid_token(method) {
         True -> Ok(Other(method))
@@ -185,6 +187,7 @@ pub fn method_to_string(method: Method) -> String {
     Post -> "POST"
     Put -> "PUT"
     Trace -> "TRACE"
+    Query -> "QUERY"
     Other(method) -> method
   }
 }
